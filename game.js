@@ -16,12 +16,22 @@ function createGrid(dimension) {
     container.style.gridTemplateColumns = gridTemplate;
 }
 
-createGrid(8);
+createGrid(14);
+
+let mouseDown = 0;
+document.body.onmousedown = () => {
+    ++mouseDown;
+}
+document.body.onmouseup = () => {
+    --mouseDown;
+}
 
 const cells = document.querySelectorAll('.cell');
 cells.forEach((cell) => {
-    cell.addEventListener('mousedown', () => {
-        cell.style.backgroundColor = 'blue';
+    cell.addEventListener('pointerenter', () => {
+        if (mouseDown == 1) {
+            cell.style.backgroundColor = 'blue';
+        }
     });
 });
 

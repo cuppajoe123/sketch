@@ -1,3 +1,7 @@
+* {
+    user-select: none;
+}
+
 h1 {
     text-align: center;
 }
@@ -16,7 +20,6 @@ h1 {
 
 .cell {
     text-align: center;
-    
     font-size: 10px;
     padding: 20px;
 }
