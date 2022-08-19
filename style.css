@@ -1,4 +1,13 @@
-.container {
+h1 {
+    text-align: center;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.gridContainer {
     height: 960px;
     width: 960px;
     display: grid;
@@ -7,6 +16,7 @@
 
 .cell {
     text-align: center;
+    
     font-size: 10px;
     padding: 20px;
 }

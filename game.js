@@ -1,4 +1,4 @@
-const container = document.querySelector('.container');
+const container = document.querySelector('.gridContainer');
 
 function createGrid(dimension) {
     for (let i = 0; i < dimension*dimension; i++) {
@@ -17,3 +17,12 @@ function createGrid(dimension) {
 }
 
 createGrid(8);
+
+const cells = document.querySelectorAll('.cell');
+cells.forEach((cell) => {
+    cell.addEventListener('mousedown', () => {
+        cell.style.backgroundColor = 'blue';
+    });
+});
+
+
