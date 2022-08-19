@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
 * {
     user-select: none;
 }
@@ -22,4 +28,30 @@ h1 {
 .cell {
     text-align: center;
     font-size: 10px;
+}
+
+.form {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    font-size: 18px;
+    width: 100px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #3882F2;
+    color: #F9FAF8;
+    border-radius: 8px;
+    border: 0px;
+    margin-top: 8px;
+}
+
+label, input {
+    font-size: 18px;
 }
