@@ -3,7 +3,6 @@ const container = document.querySelector('.gridContainer');
 function createGrid(dimension) {
     for (let i = 0; i < dimension*dimension; i++) {
         let cell = document.createElement('div');
-        cell.textContent = "Hello";
         cell.classList.add('cell');
         container.appendChild(cell);
     }
@@ -16,7 +15,7 @@ function createGrid(dimension) {
     container.style.gridTemplateColumns = gridTemplate;
 }
 
-createGrid(14);
+createGrid(80);
 
 let mouseDown = 0;
 document.body.onmousedown = () => {
@@ -34,5 +33,3 @@ cells.forEach((cell) => {
         }
     });
 });
-
-
