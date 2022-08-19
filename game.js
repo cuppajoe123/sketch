@@ -19,16 +19,16 @@ createGrid(80);
 
 let mouseDown = 0;
 document.body.onmousedown = () => {
-    ++mouseDown;
+    mouseDown = true;
 }
 document.body.onmouseup = () => {
-    --mouseDown;
+    mouseDown = false;
 }
 
 const cells = document.querySelectorAll('.cell');
 cells.forEach((cell) => {
     cell.addEventListener('pointerenter', () => {
-        if (mouseDown == 1) {
+        if (mouseDown) {
             cell.style.backgroundColor = 'blue';
         }
     });
