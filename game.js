@@ -1,16 +1,19 @@
 const container = document.querySelector('.container');
 
-function createGrid(numRows, numColumns) {
-    for (let i = 0; i < numRows; i++) {
-        let row = document.createElement('div');
-        row.classList.add('row');
-        for (let j = 0; j < numColumns; j++) {
-            let column = document.createElement('div');
-            column.classList.add('column');
-            row.appendChild(column);
-        }
-        container.appendChild(row);
+function createGrid(dimension) {
+    for (let i = 0; i < dimension*dimension; i++) {
+        let cell = document.createElement('div');
+        cell.textContent = "Hello";
+        cell.classList.add('cell');
+        container.appendChild(cell);
     }
+
+    let gridTemplate = "";
+    for (let i = 0; i < dimension; i++) {
+        gridTemplate += "1fr ";
+    }
+    container.style.gridTemplateColumns = gridTemplate;
+    container.style.gridTemplateColumns = gridTemplate;
 }
 
-createGrid(16, 16);
+createGrid(8);
