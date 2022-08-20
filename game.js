@@ -1,4 +1,5 @@
 const container = document.querySelector('.gridContainer');
+let cellColor = 'blue'; //default color
 
 function createGrid(dimension) {
     container.replaceChildren();
@@ -16,32 +17,48 @@ function createGrid(dimension) {
     container.style.gridTemplateColumns = gridTemplate;
 }
 
-function registerEventListeners() {
-    let mouseDown = 0;
-    document.body.onmousedown = () => {
-        mouseDown = true;
+function isColor(strColor){
+  var s = new Option().style;
+  s.color = strColor;
+  return s.color == strColor;
+}
+
+function registerPointerEventListeners() {
+    let pointerDown = 0;
+    document.body.onpointerdown = () => {
+        pointerDown = true;
     }
     document.body.onmouseup = () => {
-        mouseDown = false;
+        pointerDown = false;
     }
     const cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
         cell.addEventListener('pointerenter', () => {
-            if (mouseDown) {
-                cell.style.backgroundColor = 'blue';
+            if (pointerDown) {
+                cell.style.backgroundColor = cellColor;
             }
         });
     });
 }
 
-createGrid(80);
-registerEventListeners();
 
-const submitGridLength = document.querySelector('.submit');
+
+createGrid(80);
+registerPointerEventListeners();
+
+const submitGridLength = document.querySelector('.submitGridLength');
 submitGridLength.addEventListener('click', () => {
-    let gridLength = document.getElementById('inputId').value;
+    let gridLength = document.getElementById('gridLength').value;
     if (gridLength > 0 && gridLength <= 100) {
         createGrid(gridLength);
-        registerEventListeners();
+        registerPointerEventListeners();
+    }
+});
+
+const submitCellColor = document.querySelector('.submitCellColor');
+submitCellColor.addEventListener('click', () => {
+    let newCellColor = document.getElementById('cellColor').value;
+    if (isColor(newCellColor)) {
+        cellColor = newCellColor;
     }
 });

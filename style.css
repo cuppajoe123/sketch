@@ -22,7 +22,7 @@ h1 {
     width: 800px;
     display: grid;
     border-radius: 8px;
-    outline: 1px solid red;
+    outline: 4px solid #3882F2;
 }
 
 .cell {
