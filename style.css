@@ -4,12 +4,9 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-* {
-    user-select: none;
-}
-
-h1 {
+h1, h2{
     text-align: center;
+    user-select: none;
 }
 
 .mainContainer {
@@ -31,9 +28,8 @@ h1 {
 }
 
 .form {
-    margin: 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -54,4 +50,15 @@ h1 {
 
 label, input {
     font-size: 18px;
+}
+
+input {
+    width: 300px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 350px;
 }
